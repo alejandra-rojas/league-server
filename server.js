@@ -6,7 +6,13 @@ const pool = require("./db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://hi-tennis-leagues.netlify.app",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // GET ALL LEAGUES
